@@ -63,7 +63,7 @@ PCA-based reduction.
 ---
 
 ## Workflow Architecture
-
+<img src="architecture_daigram.png">
 
 ---
 
