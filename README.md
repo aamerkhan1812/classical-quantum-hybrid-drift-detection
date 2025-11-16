@@ -160,11 +160,20 @@ Notebook: `notebooks/06_meta_learner.ipynb`
 
 ---
 
-## Results
+## **Cross-Dataset Performance Comparison**
 
-### Credit Card Fraud Dataset
+| **Metric**             | **FDA** | **IEEE-CIS** | **Credit Card** |
+|------------------------|---------|--------------|------------------|
+| **Accuracy**           | 0.973   | 0.973        | **1.000**        |
+| **Precision**          | 0.823   | 0.789        | **1.000**        |
+| **Recall**             | 0.933   | **1.000**    | **1.000**        |
+| **F1 Score**           | 0.882   | 0.882        | **1.000**        |
+| **ROC-AUC**            | 0.990   | 0.988        | **1.000**        |
+| **PR-AUC**             | 0.925   | 0.870        | **1.000**        |
+| **False Positive Rate**| 1.33%   | 2.67%        | **0%**           |
 
-Performance:
+
+
 
 
 ---
