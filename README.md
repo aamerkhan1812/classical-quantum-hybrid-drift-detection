@@ -63,7 +63,9 @@ PCA-based reduction.
 ---
 
 ## Workflow Architecture
-<img src="architecture_daigram.png">
+<p align="center">
+  <img src="architecture_diagram.png" alt="Hybrid Drift Detection Architecture Diagram" width="85%">
+</p>
 
 ---
 
