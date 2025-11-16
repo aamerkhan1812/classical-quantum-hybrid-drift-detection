@@ -43,7 +43,149 @@ This project develops and evaluates a hybrid drift detection system designed for
 
 The goal is to detect distribution shifts (concept drift) while maintaining strict false-positive bounds.
 
+
 ---
 
-## Repository Structure
+## Datasets
+
+Detailed description is provided in:  
+**[data/README.md](data/README.md)**
+
+This project evaluates three fraud datasets:
+
+### 1. FDA Fraud Dataset (Kaggle)  
+Processed into 150 sliding windows.
+
+### 2. IEEE-CIS Fraud Detection (Kaggle)  
+Dimensional reduction via Truncated SVD due to high feature count.
+
+### 3. Credit Card Fraud (Kaggle ULB)  
+PCA-based reduction.
+
+---
+
+## Workflow Architecture
+
+
+---
+
+## Data Preprocessing
+
+Each dataset undergoes:
+
+1. Missing value imputation  
+2. Feature pruning & encoding  
+3. Scaling  
+4. PCA or Truncated SVD  
+5. Window slicing into reference/test segments  
+
+Notebook:  
+`notebooks/01_preprocessing.ipynb`
+
+---
+
+## Classical Drift Detection
+
+Implements Classical MMD using:
+
+- RBF Kernel  
+- Unbiased MMD Estimator  
+- Permutation Testing  
+- Subsampling for efficiency  
+
+File: `src/detectors/classical_mmd.py`  
+Notebook: `notebooks/02_classical.ipynb`
+
+---
+
+## Quantum Drift Detection
+
+Quantum detection uses:
+
+- Fidelity Kernel via PennyLane  
+- Amplitude + Phase Encoding  
+- 4–6 Qubits  
+- Kernel-MMD Testing  
+
+File: `src/detectors/quantum_mmd.py`  
+Notebook: `notebooks/03_quantum.ipynb`
+
+---
+
+## Hybrid Fusion Layer
+
+Combines classical & quantum signals with:
+
+- Adaptive rolling threshold  
+- Reliability-gating through kernel variance  
+- Tunable weighting  
+
+File: `src/detectors/fusion.py`  
+Notebook: `notebooks/04_fusion.ipynb`
+
+---
+
+## Drift Injection Framework
+
+Used to generate labels by simulating drift using:
+
+- Mean-shift  
+- Fraction-based row perturbation  
+- Configurable intensity  
+
+File: `src/injection/run_injection.py`  
+Notebook: `notebooks/05_injection.ipynb`
+
+---
+
+## Meta-Learner (FP-Constrained)
+
+A supervised model to consolidate detector signals with strict false-positive control.
+
+Features used:
+
+- Hybrid fusion metrics  
+- Classical & quantum p-values  
+- Kernel variance  
+- Rolling statistics  
+
+Model:
+
+- Logistic Regression  
+- 5-fold OOF probabilities  
+- Custom FP-capped threshold search  
+
+File: `src/meta_learner/train_meta.py`  
+Notebook: `notebooks/06_meta_learner.ipynb`
+
+---
+
+## Results
+
+### Credit Card Fraud Dataset
+
+Performance:
+
+
+---
+
+## Environment & Dependencies
+
+All dependencies and versions are captured in:
+
+- `environment.yml`  
+- `requirements.txt`
+
+These mirror the exact versions used in the final experiments.
+
+---
+
+## Cite This Work
+
+A. Khan, "Hybrid Quantum–Classical Drift Detection Using Fidelity Kernels and FP-Constrained Meta-Learning", 2025.
+
+
+---
+
+End of README.
 
