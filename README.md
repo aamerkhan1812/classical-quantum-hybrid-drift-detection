@@ -171,7 +171,7 @@ Notebook: `notebooks/06_meta_learner.ipynb`
 | **ROC-AUC**            | 0.990   | 0.988        | **1.000**        |
 | **PR-AUC**             | 0.925   | 0.870        | **1.000**        |
 | **False Positive Rate**| 1.33%   | 2.67%        | **0%**           |
-
+| **Confusion Matrix**   | ![]results/transaction/results/full_run_fp_constrained/confusion_matrix.png   | 2.67%        | **0%**           |
 
 
 
