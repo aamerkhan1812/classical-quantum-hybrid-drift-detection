@@ -13,8 +13,7 @@ This repository provides:
 ---
 
 ## Table of Contents
-- [Overview](#overview)  
-- [Repository Structure](#repository-structure)  
+- [Overview](#overview)    
 - [Datasets](#datasets)  
 - [Workflow Architecture](#workflow-architecture)  
 - [Data Preprocessing](#data-preprocessing)  
@@ -23,8 +22,7 @@ This repository provides:
 - [Hybrid Fusion Layer](#hybrid-fusion-layer)  
 - [Drift Injection Framework](#drift-injection-framework)  
 - [Meta-Learner (FP-Constrained)](#meta-learner-fp-constrained)  
-- [Results](#results)  
-- [How to Run](#how-to-run)  
+- [Results](#results) 
 - [Environment & Dependencies](#environment--dependencies)  
 - [Cite This Work](#cite-this-work)
 
@@ -160,19 +158,18 @@ Notebook: `notebooks/06_meta_learner.ipynb`
 
 ---
 
-## **Cross-Dataset Performance Comparison**
+## Results
 
-| **Metric**             | **FDA** | **IEEE-CIS** | **Credit Card** |
-|------------------------|---------|--------------|------------------|
-| **Accuracy**           | 0.973   | 0.973        | **1.000**        |
-| **Precision**          | 0.823   | 0.789        | **1.000**        |
-| **Recall**             | 0.933   | **1.000**    | **1.000**        |
-| **F1 Score**           | 0.882   | 0.882        | **1.000**        |
-| **ROC-AUC**            | 0.990   | 0.988        | **1.000**        |
-| **PR-AUC**             | 0.925   | 0.870        | **1.000**        |
-| **False Positive Rate**| 1.33%   | 2.67%        | **0%**           |
-| **Confusion Matrix**   | ![]results/transaction/results/full_run_fp_constrained/confusion_matrix.png   | 2.67%        | **0%**           |
-
+| Metric               | FDA Dataset | IEEE-CIS Dataset | Credit Card Dataset |
+|----------------------|-------------|------------------|----------------------|
+| Accuracy             | **0.973**   | **0.973**        | **1.000**            |
+| Precision            | **0.823**   | **0.789**        | **1.000**            |
+| Recall               | **0.933**   | **1.000**        | **1.000**            |
+| F1 Score             | **0.882**   | **0.882**        | **1.000**            |
+| ROC-AUC              | **0.990**   | **0.988**        | **1.000**            |
+| PR-AUC               | **0.925**   | **0.870**        | **1.000**            |
+| False Positive Rate  | **1.33%**   | **2.67%**        | **0%**               |
+| Confusion Matrix     | <img src="results/base/results/full_run_fp_constrained/confusion_matrix.png" width="250"> | <img src="results/transaction/results/full_run_fp_constrained/confusion_matrix.png" width="250"> | <img src="results/creditcard/results/full_run_fp_constrained/confusion_matrix.png" width="250"> |
 
 
 
